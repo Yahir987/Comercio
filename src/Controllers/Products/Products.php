@@ -5,7 +5,7 @@ namespace Controllers\Products;
 use Controllers\PublicController;
 use Utilities\Context;
 use Utilities\Paging;
-use Dao\Products\Products as DaoProducts;
+use Dao\Products\Products as ProductsDao;
 use Views\Renderer;
 
 class Products extends PublicController
@@ -25,7 +25,7 @@ class Products extends PublicController
   {
     $this->getParamsFromContext();
     $this->getParams();
-    $tmpProducts = DaoProducts::getProducts(
+    $tmpProducts = ProductsDao::getProducts(
       $this->partialName,
       $this->status,
       $this->orderBy,
